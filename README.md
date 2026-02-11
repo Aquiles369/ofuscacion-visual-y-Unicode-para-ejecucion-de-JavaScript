@@ -11,11 +11,12 @@
 <picture> <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">  </picture>
 
 
-### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTJhbnhicXlyNDBiMXJ5d2JoazEyNXY3MHVqYXMyZjZ4ZTdzOWh3MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/S4kCITUXoyg3Gyr1cN/giphy.gif" width = 75px> Normalizacion Unicode y Desalineacion entre Capas.  </picture> 
+### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTJhbnhicXlyNDBiMXJ5d2JoazEyNXY3MHVqYXMyZjZ4ZTdzOWh3MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/S4kCITUXoyg3Gyr1cN/giphy.gif" width = 75px> Ofuscación visual y Unicode para ejecución de JavaScript.  </picture> 
 
 <br>
 
- **Catálogo técnico interactivo para analizar normalización Unicode aplicada a seguridad web. Enfocado en NFC, NFD, NFKC y NFKD y en cómo discrepancias entre WAF, backend, runtime y navegador generan desalineación semántica explotable. Incluye análisis práctico de equivalencia canónica vs compatibilidad, propiedades de Quick_Check, Composition_Exclusion y comportamiento en distintos puntos del pipeline (input → WAF → backend → runtime → navegador).** 
+ **Catálogo técnico interactivo para analizar el uso de Unicode en ejecución real de JavaScript y su diferencia con la ofuscación visual aplicada a seguridad web. Enfocado en cómo distintos bloques Unicode se comportan bajo parsers HTML y motores ECMAScript, y cómo discrepancias entre WAF, backend y runtime pueden generar interpretaciones divergentes del mismo identificador o token.Incluye análisis práctico de validez sintáctica según especificación ECMAScript, comportamiento de identificadores Unicode, homoglifos funcionales vs no funcionales y diferencias entre apariencia visual y semántica real dentro del pipeline (input → WAF → backend → runtime → navegador).
+Proyecto en investigación activa. El contenido evoluciona conforme se validan nuevos escenarios de parsing y ejecución bajo distintos bloques Unicode.** 
 <br><br> 
 
 **Proyecto en investigación activa. El contenido evoluciona conforme se validan nuevos escenarios de normalización y desalineación entre capas.** 
