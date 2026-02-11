@@ -144,7 +144,7 @@ Investigación ofensiva con base normativa, centrada en:<br>
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZWViN240bnB1YnowdDU4cmRyY2dqZ2Z2YWxsMWc5YXIwYTQzdHhrYyZlcD12MV9zdGlja2Vyc19yZWxhdGVkJmN0PXM/yB0WDQ9gO20szljPbB/giphy.gif" width = 80px>  </picture> “Analiza cómo NFC, NFD, NFKC y NFKD transforman realmente el input, identifica en qué punto del pipeline se normaliza y detecta desalineaciones entre WAF, backend y runtime antes de que se conviertan en superficie explotable.”
+### <picture> <img src = "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZWViN240bnB1YnowdDU4cmRyY2dqZ2Z2YWxsMWc5YXIwYTQzdHhrYyZlcD12MV9zdGlja2Vyc19yZWxhdGVkJmN0PXM/yB0WDQ9gO20szljPbB/giphy.gif" width = 80px>  </picture> “Analiza qué bloques Unicode son realmente válidos para ejecución en JavaScript, distingue entre ofuscación visual y validez sintáctica, y detecta dónde el parser acepta lo que el filtro no entiende antes de asumir un bypass.”
 <br>
 
 
