@@ -15,13 +15,13 @@
 
 <br>
 
-Catálogo técnico interactivo para analizar el uso de Unicode en ejecución real de JavaScript y su diferencia con la ofuscación visual aplicada a seguridad web. Enfocado en cómo distintos bloques Unicode se comportan bajo parsers HTML y motores ECMAScript, y cómo discrepancias entre WAF, backend y runtime pueden generar interpretaciones divergentes del mismo identificador o token.<br>
-Incluye análisis práctico de validez sintáctica según especificación ECMAScript, comportamiento de identificadores Unicode, homoglifos funcionales vs no funcionales y diferencias entre apariencia visual y semántica real dentro del pipeline (input → WAF → backend → runtime → navegador).<br>
+Catálogo técnico interactivo para analizar el uso de Unicode en ejecución real de JavaScript y su diferencia con la ofuscación visual aplicada a seguridad web. Enfocado en cómo distintos bloques Unicode se comportan bajo parsers HTML y motores ECMAScript, y cómo discrepancias entre WAF, backend y runtime pueden generar interpretaciones divergentes del mismo identificador o token.<br><br>
+
+Incluye análisis práctico de validez sintáctica según especificación ECMAScript, comportamiento de identificadores Unicode, homoglifos funcionales vs no funcionales y diferencias entre apariencia visual y semántica real dentro del pipeline (input → WAF → backend → runtime → navegador).<br><br>
+
 Proyecto en investigación activa. El contenido evoluciona conforme se validan nuevos escenarios de parsing y ejecución bajo distintos bloques Unicode. 
 <br><br> 
 
-**Proyecto en investigación activa. El contenido evoluciona conforme se validan nuevos escenarios de normalización y desalineación entre capas.** 
-<br><br> 
 
 <br>
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
