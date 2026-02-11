@@ -11,7 +11,7 @@
 <picture> <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">  </picture>
 
 
-### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTJhbnhicXlyNDBiMXJ5d2JoazEyNXY3MHVqYXMyZjZ4ZTdzOWh3MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/S4kCITUXoyg3Gyr1cN/giphy.gif" width = 75px> Ofuscación visual y Unicode para ejecución de JavaScript.  </picture> 
+### <picture> <img src = "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NW5sZ2g4dmhnc3k4M2pjMGlubXl1Njk5eGZ1MmI1b2k5ZDVid29hOSZlcD12MV9zdGlja2Vyc19yZWxhdGVkJmN0PXM/1dPKqD8HqzmfxEUzzZ/giphy.gif" width = 75px> Ofuscación visual y Unicode para ejecución de JavaScript.  </picture> 
 
 <br>
 
@@ -27,26 +27,24 @@ Proyecto en investigación activa. El contenido evoluciona conforme se validan n
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzZhdzU1ejBxaXJhaHcwZnVqN2xxcHFhMmI2dWdudnM3ZGd3aDV1dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/LS8dIaRdiTEFVBSxDF/giphy.gif" width = 75px>  </picture> Problema que resuelve<br><br>
-**Cuando auditás aplicaciones web, muchos asumen que usar homoglyphs o caracteres “raros” es suficiente para bypass.<br><br>
+### <picture> <img src = "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NW5sZ2g4dmhnc3k4M2pjMGlubXl1Njk5eGZ1MmI1b2k5ZDVid29hOSZlcD12MV9zdGlja2Vyc19yZWxhdGVkJmN0PXM/2z956IUc3J0noEOXUL/giphy.gif" width = 75px>  </picture> Problema que resuelve<br><br>
+**Cuando auditás aplicaciones web, muchos asumen que cualquier carácter Unicode “raro” puede ejecutar JavaScript o generar bypass.<br><br>
 El problema real es otro:<br><br>
-• No todos los sistemas normalizan igual.<br><br>
-• No todos normalizan en el mismo momento.<br><br>
-• Algunos hacen matching antes de normalizar.<br><br>
-• Otros normalizan en NFKC mientras el backend compara en NFC.</a>.** 
-
-<br><br>
+• No todos los bloques Unicode son válidos para identificadores JS.<br><br>
+• No todos los caracteres visualmente equivalentes son sintácticamente válidos.<br><br>
+• Parsers HTML y motores JavaScript no aceptan exactamente los mismos rangos.<br><br>
+• Algunos WAF bloquean por apariencia visual aunque el runtime ejecute correctamente.<br><br>
+• Ofuscación visual no implica ejecución semántica.<br><br>
 
 Esto genera:<br><br>
 
-• Falsos positivos en pruebas ofensivas.<br><br>
-• Payloads que “parecen funcionar” pero se recomponen y dejan de ejecutar.<br><br>
-• Ventanas lógicas cuando WAF y backend interpretan distinto el mismo input.<br><br>
+• Payloads que no ejecutan.<br><br>
+• Bypass teóricos sin fundamento sintáctico.<br><br>
+• Confusión entre homoglyph funcional y carácter inválido.<br><br>
+• Ruido innecesario en pruebas ofensivas avanzadas.<br><br>
 
-<br>
-
-La superficie real no está en el carácter extraño.
-Está en la desalineación semántica entre capas.
+La superficie explotable no está en “usar Unicode extraño”.
+Está en conocer qué bloques ejecutan realmente y cuáles solo sirven para ofuscar.<br>
 
 <br>
 
@@ -54,46 +52,51 @@ Está en la desalineación semántica entre capas.
 
 <br>
 
-### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXVvem9uczRjOTUycTdlM2N0a3h5Mmx1Mnl2eXg4dWg4enFya2d3NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/WvkRfmIxMOm6iUYouv/giphy.gif" width = 75px>  </picture> Qué aporta y cómo beneficia <br><br>
+### <picture> <img src = "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NW5sZ2g4dmhnc3k4M2pjMGlubXl1Njk5eGZ1MmI1b2k5ZDVid29hOSZlcD12MV9zdGlja2Vyc19yZWxhdGVkJmN0PXM/LBFPLXkgoVm80dx6sP/giphy.gif" width = 75px>  </picture> Qué aporta y cómo beneficia <br><br>
 
 <br>
 
-• Comprensión real de NFC, NFD, NFKC y NFKD en contexto ofensivo.<br><br>
-• Diferenciación técnica entre equivalencia canónica y equivalencia de compatibilidad.<br><br>
-• Análisis del impacto de NFC_Quick_Check=Maybe en validaciones.<br><br>
-• Estudio de Composition_Exclusion y estabilidad post Unicode 4.1.<br><br>
-• Evaluación de normalización en concatenación, buffering y condiciones stream-safe.<br><br>
-• Identificación de escenarios donde el orden de normalización altera el resultado final.
+• Identificación práctica de bloques Unicode funcionales para ejecución en ECMAScript.<br><br>
+• Separación clara entre ejecución real y ofuscación visual.<br><br>
+• Análisis basado en comportamiento real del parser, no en teoría abstracta.<br><br>
+• Aplicación directa a XSS, evasión de validaciones superficiales y análisis de filtros.<br><br>
+• Optimización de payloads reduciendo ruido y falsos supuestos.<br><br>
 
-<br><br>
+Bloques relevantes (según contexto de identificadores y compatibilidad con parsers):<br><br>
 
-Esto permite:<br><br>
-
-• Reducir bypass teóricos sin base técnica.<br><br>
-• Detectar inconsistencias reales entre WAF y backend.<br><br>
-• Enfocar pruebas en divergencias observables, no en gimmicks visuales.<br>
+ASCII<br>
+Latin-1<br>
+Latin Extended (A/B/C/D/E)<br>
+Greek (subconjunto compatible)<br>
+Cyrillic (subconjunto compatible)<br>
+Fullwidth Latin<br>
+Mathematical Alphanumeric Symbols<br>
+Phonetic Extensions<br>
+Combining Marks (según contexto)<br>
+Letterlike Symbols<br>
+Super/Subscripts (limitado por parser)<br>
+Enclosed Alphanumerics (contextual)<br>
+Mathematical Operators (subconjunto válido)<br>
 
 
 
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHR3cDVhNXY0bDZteHRkMWNrNmQzMXF4NzJ1MXoyeGU2eXMzNXA4NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fYMrCNMFkCeEdwB2Vo/giphy.gif" width = 80px>  </picture> Resumen rápido
+### <picture> <img src = "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MjIxNW8yMXppcWo4aXoycmZ0dTR0ajE0NXZmcnd4d2xqMnphZ2g2diZlcD12MV9zdGlja2Vyc19yZWxhdGVkJmN0PXM/H3JHrs7JC6duvenDW8/giphy.gif" width = 80px>  </picture> Resumen rápido
 <br><br>
 
-Investigación aplicada a bug bounty ético sobre cómo la normalización Unicode puede modificar la semántica efectiva del input.<br><br>
+No todo Unicode ejecuta.
 
-No es un estudio de “caracteres raros”.<br><br>
+Solo un subconjunto reducido es válido sintácticamente para JavaScript.
+El resto puede ser útil para ofuscación visual, pero no altera la semántica real del runtime.
 
-Es un análisis del pipeline completo de interpretación:<br><br>
-
-input → normalización → matching → backend → runtime → navegador<br><br>
+La diferencia entre apariencia y validez sintáctica define si un payload funciona o es solo ruido.
 
 Unicode no es solo encoding.
-Es equivalencia semántica formal definida en el estándar.<br><br>
+Es conjunto de categorías formales que el parser acepta o rechaza según reglas estrictas.
 
-La explotación aparece cuando dos capas no aplican la misma equivalencia.<br>
-
+La explotación aparece cuando la validación superficial y la ejecución real no coinciden.
 
 
 
@@ -102,46 +105,45 @@ La explotación aparece cuando dos capas no aplican la misma equivalencia.<br>
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHR3cDVhNXY0bDZteHRkMWNrNmQzMXF4NzJ1MXoyeGU2eXMzNXA4NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fYMrCNMFkCeEdwB2Vo/giphy.gif" width = 80px>  </picture> Recursos oficiales utilizados
+### <picture> <img src = "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3YTc5YmprbXI4aTNmcWkxbXF3OWsxaHZpOTFvaDBsMWFpdnZybmNzeSZlcD12MV9zdGlja2Vyc19yZWxhdGVkJmN0PXM/r5U5hYpabekbSj0Jn8/giphy.gif" width = 80px>  </picture> Recursos oficiales utilizados
 <br><br>
 
 
+• https://www.unicode.org/charts/#scripts
+Tablas oficiales de sistemas de escritura Unicode. Base para analizar bloques y rangos disponibles.<br><br>
+
 • https://www.unicode.org/versions/Unicode17.0.0/
-Página oficial de versiones del estándar Unicode. Documenta reglas formales de normalización, estabilidad y definiciones normativas.<br><br>
+Definiciones normativas del estándar Unicode.<br><br>
 
 • https://www.unicode.org/Public/UCD/latest/ucd/
-Unicode Character Database (UCD). Contiene todas las propiedades formales de los codepoints: categorías, decompositions, combining classes, Quick_Check, etc. Es la base técnica real del comportamiento de normalización.<br><br>
+Unicode Character Database (propiedades formales de codepoints: categorías, combinaciones, etc.).<br><br>
 
-• https://www.unicode.org/Public/UCD/latest/ucd/DerivedNormalizationProps.txt
-Archivo derivado que lista propiedades específicas relacionadas con normalización, como NFC_QC, NFKC_QC y Composition_Exclusion. Fundamental para entender qué caracteres pueden cambiar bajo cada forma.<br><br>
-
-• https://util.unicode.org/UnicodeJsps/character.jsp
-Herramienta oficial para inspeccionar propiedades de un codepoint individual.<br><br>
-
-Ejemplo:<br>
-https://util.unicode.org/UnicodeJsps/character.jsp?a=2126
-Permite analizar propiedades como descomposición, Quick_Check y exclusiones de composición en un carácter concreto (U+2126 OHM SIGN).<br>
+• https://tc39.es/ecma262/
+Especificación oficial de ECMAScript (reglas formales de identificadores Unicode y sintaxis válida).<br>
 
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWV6Y3FmbmxpdjNwd2dhNGMydHh1OHZiZ2cxYTh6a2JxbTNoc3R1YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ZEl47uGZlLY3CRHl5Y/giphy.gif" width = 80px>  </picture> Enfoque
+### <picture> <img src = "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3aHo4dGYwcHBjM2pxb2djYjF4aTcxcm1udHd6dzI2MHgzNzl6enBtZCZlcD12MV9zdGlja2Vyc19yZWxhdGVkJmN0PXM/dLD88887PfEeQnmShM/giphy.gif" width = 80px>  </picture> Enfoque
 <br><br>
 
 
 Investigación ofensiva con base normativa, centrada en:<br>
 
-• Propiedades formales del estándar Unicode.<br><br>
-• Divergencias reales entre motores de normalización.<br><br>
-• Impacto práctico en WAF, validadores y runtimes.<br><br>
-• Normalización como vector lógico, no visual.<br><br>
+• Reglas formales de identificadores en ECMAScript.<br><br>
+• Categorías Unicode aceptadas por motores JS reales.<br><br>
+• Diferencia entre apariencia visual y validez sintáctica.<br><br>
+• Comportamiento práctico de parsers HTML y motores JavaScript.<br><br>
+• Unicode como herramienta quirúrgica, no decorativa.<br><br>
+
+“Analiza qué bloques Unicode son realmente válidos para ejecución en ECMAScript, identifica cómo los parsers interpretan identificadores y distingue entre ofuscación visual y ejecución semántica antes de asumir un bypass.”
  
  <br>
 
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3YwbG9zbmU1amprdTJsbmxzYnpobzd5eGtnazB6b2FmdnllaTRhZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/h8UlsEpqiCISTKUzvz/giphy.gif" width = 80px>  </picture> “Analiza cómo NFC, NFD, NFKC y NFKD transforman realmente el input, identifica en qué punto del pipeline se normaliza y detecta desalineaciones entre WAF, backend y runtime antes de que se conviertan en superficie explotable.”
+### <picture> <img src = "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZWViN240bnB1YnowdDU4cmRyY2dqZ2Z2YWxsMWc5YXIwYTQzdHhrYyZlcD12MV9zdGlja2Vyc19yZWxhdGVkJmN0PXM/yB0WDQ9gO20szljPbB/giphy.gif" width = 80px>  </picture> “Analiza cómo NFC, NFD, NFKC y NFKD transforman realmente el input, identifica en qué punto del pipeline se normaliza y detecta desalineaciones entre WAF, backend y runtime antes de que se conviertan en superficie explotable.”
 <br>
 
 
