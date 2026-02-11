@@ -28,7 +28,8 @@ Proyecto en investigación activa. El contenido evoluciona conforme se validan n
 <br>
 
 ### <picture> <img src = "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NW5sZ2g4dmhnc3k4M2pjMGlubXl1Njk5eGZ1MmI1b2k5ZDVid29hOSZlcD12MV9zdGlja2Vyc19yZWxhdGVkJmN0PXM/2z956IUc3J0noEOXUL/giphy.gif" width = 75px>  </picture> Problema que resuelve<br><br>
-**Cuando auditás aplicaciones web, muchos asumen que cualquier carácter Unicode “raro” puede ejecutar JavaScript o generar bypass.<br><br>
+Cuando auditás aplicaciones web, muchos asumen que cualquier carácter Unicode “raro” puede ejecutar JavaScript o generar bypass.<br><br>
+
 El problema real es otro:<br><br>
 • No todos los bloques Unicode son válidos para identificadores JS.<br><br>
 • No todos los caracteres visualmente equivalentes son sintácticamente válidos.<br><br>
