@@ -1,1 +1,1 @@
-# ofuscacion-visual-y-Unicode-para-ejecucion-de-JavaScript.
+# Ofuscación visual y Unicode para ejecución de JavaScript.
